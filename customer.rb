@@ -1,11 +1,12 @@
 class Customer
 
-attr_reader :name, :wallet, :age
+attr_reader :name, :wallet, :age, :drunkenness
 
-def initialize(name, wallet, age = [])
+def initialize(name, wallet, age = [], drunkenness = [])
   @name = name
   @wallet = wallet
   @age = age
+  @drunkenness = drunkenness
 end
 
 
@@ -15,6 +16,10 @@ end
 
 def get_customer_age
   return @age
+end
+
+def get_drunkenness_level
+  return @drunkenness
 end
 
 end

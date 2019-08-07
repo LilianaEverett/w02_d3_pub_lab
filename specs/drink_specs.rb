@@ -15,7 +15,10 @@ def test_drink_price
   assert_equal(5, drink.get_drink_price())
 end
 
-
+def test_drink_alcool_level
+  drink = Drink.new("Whiskey", 15, 40)
+  assert_equal(40, drink.get_alcohol_level)
+end
 
 
 end

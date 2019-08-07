@@ -9,6 +9,7 @@ def setup
 
   @customer1 = Customer.new("Shona", 20)
   @customer2 = Customer.new("Liliana", 30, 40)
+  @customer3 = Customer.new("John", 45, 30, 10)
 
 end
 
@@ -29,6 +30,9 @@ def test_customer_age
   assert_equal(40, @customer2.get_customer_age())
 end
 
+def test_drunkenness_level
+  assert_equal(10, @customer3.get_drunkenness_level)
+end
 
 
 end
