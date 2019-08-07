@@ -11,6 +11,8 @@ def setup
   @drink2 = Drink.new("Whiskey", 10)
   @drink3 = Drink.new("White wine", 15)
 
+  @customer1 = Customer.new("Liliana", 40)
+
   @pub1 = Pub.new("Doctor's", 1000, [@drink1, @drink2, @drink3])
 end
 
@@ -31,8 +33,23 @@ def test_drinks_count
 end
 
 def test_removing_drink
-  @pub1.get_drink(@drink2)
+  @pub1.remove_drink(@drink2)
   assert_equal(2, @pub1.drinks_count())
+end
+
+def test_till_total
+  assert_equal(1000, @pub1.till)
+end
+
+def test_add_money_to_till
+  @pub1.add_money_to_till(10)
+  assert_equal(1010, @pub1.till())
+end
+
+def test_sell_drink_to_a_customer
+
+
+  assert_equal(1015, @pub1.till())
 end
 
 
