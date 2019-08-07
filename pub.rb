@@ -20,20 +20,14 @@ def remove_drink(drink)
    @drinks.delete(drink)
 end
 
-def
-  if condition
-
+def sell_drink(drink, customer)
+  drink_price = drink.get_drink_price
+  @till += drink_price
+  customer.reduce_money_from_wallet(drink_price)
+  remove_drink(drink)
+  drinks_count
   end
-#
-# end
 
-# gets drink_price
-
-# def reduce_money_from_wallet(price_drink)
-#   @wallet -= amount
-# end
-
-# add_money_to_till(price_drink)
 
 # remove_drink(drink)
 

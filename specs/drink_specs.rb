@@ -12,8 +12,9 @@ end
 
 def test_drink_price
   drink = Drink.new("Pink Gin", 5)
-  assert_equal(5, drink.price)
+  assert_equal(5, drink.get_drink_price())
 end
+
 
 
 

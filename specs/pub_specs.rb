@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../pub')
 require_relative('../drink')
+require_relative('../customer')
 
 
 class TestPub < Minitest::Test
@@ -47,8 +48,9 @@ def test_add_money_to_till
 end
 
 def test_sell_drink_to_a_customer
-
-
+  @pub1.sell_drink(@drink3, @customer1)
+  assert_equal(25, @customer1.wallet())
+  assert_equal(2, @pub1.drinks_count())
   assert_equal(1015, @pub1.till())
 end
 

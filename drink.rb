@@ -7,7 +7,9 @@ def initialize(name, price)
   @price = price
 end
 
-
+def get_drink_price
+  return @price
+end
 
 
 end
