@@ -21,12 +21,14 @@ def remove_drink(drink)
 end
 
 def sell_drink(drink, customer)
-  drink_price = drink.get_drink_price
-  @till += drink_price
-  customer.reduce_money_from_wallet(drink_price)
-  remove_drink(drink)
-  drinks_count
+  if customer.get_customer_age >= 18
+    drink_price = drink.get_drink_price
+    @till += drink_price
+    customer.reduce_money_from_wallet(drink_price)
+    remove_drink(drink)
+    drinks_count
   end
+end
 
 
 # remove_drink(drink)
