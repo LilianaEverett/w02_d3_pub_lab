@@ -26,5 +26,14 @@ def test_pub_drinks
   assert_equal(3, @pub1.drinks.count())
 end
 
+def test_drinks_count
+  assert_equal(3, @pub1.drinks_count())
+end
+
+def test_removing_drink
+  @pub1.get_drink(@drink2)
+  assert_equal(2, @pub1.drinks_count())
+end
+
 
 end

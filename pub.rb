@@ -8,7 +8,16 @@ def initialize(name, till, drinks)
   @drinks = drinks
 end
 
+def drinks_count
+  return @drinks.count
+end
 
+def method_name
 
+end
+
+def get_drink(drink)
+   @drinks.delete(drink)
+end
 
 end

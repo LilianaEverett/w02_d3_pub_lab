@@ -8,6 +8,8 @@ def initialize(name, wallet)
 end
 
 
-
+def reduce_money_from_wallet(amount)
+  @wallet -= amount
+end
 
 end
