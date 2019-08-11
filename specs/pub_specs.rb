@@ -12,14 +12,14 @@ class TestPub < Minitest::Test
     @drink1 = Drink.new("Pink Gin", 5)
     @drink2 = Drink.new("Whiskey", 10)
     @drink3 = Drink.new("White wine", 15)
+    @food1 = Food.new('chips', 3, 3)
 
     @customer1 = Customer.new("Liliana", 40, 25, 6)
     @customer2 = Customer.new("Shona", 50, 15)
     @customer3 = Customer.new("Joe", 30, 50, 10)
 
     @pub1 = Pub.new("Doctor's", 1000, [@drink1, @drink2, @drink3])
-
-    @food1 = Food.new('rice', 3, 3)
+    @pub2 = Pub.new("The Wee Pub", 1000, [@drink1, @drink2, @food1])
   end
 
   def test_pub_name
@@ -71,8 +71,11 @@ class TestPub < Minitest::Test
     assert_equal("Sorry, I'm not allowed to seel you a drink", result)
   end
 
-  def test_rejuvenation_level
-    assert_equal(7, @pub1.sell_food(@customer3, @food1))
+  def test_sell_food_to_a_customer
+    @pub2.sell_food(@customer3, @food1)
+    assert_equal(7, @customer3.drunkenness())
+    assert_equal(27, @customer3.wallet())
+    assert_equal(2, @pub2.stock_count())
   end
 
 end

@@ -12,8 +12,8 @@ attr_reader :name, :rejuv_level
     @rejuv_level
   end
 
-  def get_food_price(food)
-    @price
+  def get_food_price
+    return @price
   end
 
 
